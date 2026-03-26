@@ -33,10 +33,10 @@ def main():
     # anomalies = anomalies_df.compute()
     anamolies = anamolies_df
 
-    if anomalies.empty:
-        print("No anomalies detected")
+    if anamolies.empty:
+        print("No anamolies detected")
     else:
-        print(f"🚨 {len(anamolies)} anomalies detected!")
+        print(f"🚨 {len(anamolies)} anamolies detected!")
 
         for _, row in anamolies.iterrows():
             anamoly_data = {
@@ -47,7 +47,7 @@ def main():
 
             send_anamoly_email(
                 to_email=ADMIN_EMAIL,
-                anomaly=anamoly_data
+                anamoly=anamoly_data
             )
 
             print(
